@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<head>
+<title>Core - ITK Behaviour</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<link href="../../Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/base.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div id="wrap">
+<div class="container">
+<div class="row">
+<div class="span4">
+<img src="../../Template/images/logo.png"/>
+</div>
+<div class="span8">
+<h4 class="pack-title text-right">Interoperability Toolkit<br/>Core</h4>
+</div>
+</div>
+
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+</button><div class="nav-collapse collapse">
+<p class="navbar-text pull-right"><b>Version: </b>2.0; <b>Status: </b>Final</p>
+
+<!-- ##### MENU HERE #### -->
+
+<ul class="nav">
+<!-- ##### OVERVIEW #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+	<ul class="dropdown-menu">
+		<li><a href="../../index.html">About</a></li>
+		<li><a href="../../Core/changehistory.html">Change History</a></li>
+		<li><a href="../../Core/UpgradeGuide.html">Upgrade Guide</a></li>
+	</ul></li>
+<!-- ##### CORE SERVICES #### -->
+	<li><a href="CoreServices.html">ITK Behaviour</a></li>
+
+<!-- ##### DISTRIBUTION ENVELOPE #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Distribution Envelope <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./DistributionEnvelopeOverview.html">Overview</a></li>
+		<li><a href="./DistributionEnvelopeSchema.html">Schema</a></li>
+		<li><a href="./DistributionEnvelopeAttributeDescription.html">Element & Attribute Descriptions</a></li>
+		<li><a href="./DistributionEnvelopeExamples.html">Envelope Examples</a></li>
+		<li><a href="./DistributionEnvelopeProfileId.html">ProfileId</a></li>
+	</ul></li>
+
+<!-- ##### All DMS packs can be navigated to from here #### -->
+	<li><a href="supportPacks.html">Development Resources</a></li>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="content" class="row">
+<div class="span12">
+<!-- ##### TEXT START#### -->
+<h3>ITK Behaviour</h3>
+<p>
+This section highlights the behaviour of the ITK service with regards to the Distribution Envelope (DE). 
+All ITK implementations will utilize the DE across all ITK transport specifications. The DE behaviours are explained below.
+</p>
+<p>The Acknowledgements shown on the diagrams below are configurable from within the <a href="DistributionEnvelopeOverview.html">ITK Distribution Envelope</a>. See the <a href="supportPacks.html">Acknowledgement Framework</a> for details.</p>
+<h4>To Send Distribution Envelope</h4>
+<p>This service is used to send a Distribution Envelope.</p>
+<br/>
+<table class="table table-striped">
+	<tr>
+		<th style="text-align: right" width="20%">Service Description</th>
+		<td>Send DE</td>
+	</tr>
+	<tr>
+		<th style="text-align: right" width="20%">Service Identifier</th>
+		<td>urn:nhs-itk:services:201005:sendDistEnvelope</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Purpose</td>
+		<td>To asynchronously send a Distribution Envelope.</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Infrastructure Acknowledgements</td>
+		<td>In line with the business Domain Messaging Specification(DMS) requirements, recipients may be required to send an Infrastructure Acknowledgement if the urn:nhs-itk:ns:201005:infackrequested 
+		handlingSpecification within the Distribution Envelope is set to true.</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Business Acknowledgements</td>
+		<td>In line with the business Domain Messaging Specification(DMS) requirements, recipients may be required to send a Business Acknowledgement if the urn:nhs-itk:ns:201005:ackrequested
+		handlingSpecification within the Distribution Envelope is set to true.</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Payloads</td>
+		<td>The Distribution Envelope is used to wrap one or more ITK payloads.</td>
+	</tr>	
+
+</table>
+<div class="text-center">
+<img class="d-mim-centre-img" src="../Document%20Images/SendDE.png" alt="SendDE interactions"/>
+</div>
+<br/>
+<hr/>
+
+<h4>To Send and Receive Distribution Envelopes</h4>
+<p>This service is used to send and receive Distribution Envelopes.</p>
+
+<table class="table table-striped">
+	<tr>
+		<th style="text-align: right" width="20%">Service Description</th>
+		<td>Send Receive DE</td>
+	</tr>
+	<tr>
+		<th style="text-align: right" width="20%">Service Identifier</th>
+		<td>urn:nhs-itk:services:201005:sendRecvDistEnvelop</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Purpose</td>
+		<td>To synchronously send a Distribution Envelope.</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Infrastructure Acknowledgements</td>
+		<td>In line with the business Domain Messaging Specification(DMS) requirements, recipients may be required to send an Infrastructure Acknowledgement if the urn:nhs-itk:ns:201005:infackrequested 
+		handlingSpecification within the Distribution Envelope is set to true</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Business Acknowledgements</td>
+		<td>In line with the business Domain Messaging Specification(DMS) requirements, recipients may be required to send a Business Acknowledgement if the urn:nhs-itk:ns:201005:ackrequested
+		handlingSpecification within the Distribution Envelope is set to true.</td>
+	</tr>
+	<tr>
+		<th style="text-align: right">Payloads</td>
+		<td>The Distribution Envelope is used to wrap one or more ITK payloads.</td>
+	</tr>
+
+</table>
+<div class="text-center">
+<img class="d-mim-centre-img" src="../Document%20Images/SendRecDE.png" alt="SendReceiveDE interactions"/>
+</div>
+<br/><hr/>
+
+<!-- ##### TEXT END #### -->
+</div>
+</div>
+</div>
+<div id="push"/>
+</div>
+<iframe src="../../includes/footer.html" frameborder="0" scrolling="no" width="100%"></iframe>
+
+<script src="../../Template/js/jquery/jquery-1.8.3.js"> </script><script src="../../Template/js/bootstrap/bootstrap.min.js"> </script>
+<script src="../../Template/js/google-code-prettify/prettify.js"> </script>
+<script>
+!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+</script>
+
+</body></html>

@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<head>
+<title>Core - Profile</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<link href="../../Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/base.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div id="wrap">
+<div class="container">
+<div class="row">
+<div class="span4">
+<img src="../../Template/images/logo.png"/>
+</div>
+<div class="span8">
+<h4 class="pack-title text-right">Interoperability Toolkit<br/>Core</h4>
+</div>
+</div>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+</button><div class="nav-collapse collapse">
+<p class="navbar-text pull-right"><b>Version: </b>2.0; <b>Status: </b>Final</p>
+
+<!-- ##### MENU HERE #### -->
+
+<ul class="nav">
+<!-- ##### OVERVIEW #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+	<ul class="dropdown-menu">
+		<li><a href="../../index.html">About</a></li>
+		<li><a href="../../Core/changehistory.html">Change History</a></li>
+		<li><a href="../../Core/UpgradeGuide.html">Upgrade Guide</a></li>
+	</ul></li>
+<!-- ##### CORE SERVICES #### -->
+	<li><a href="CoreServices.html">ITK Behaviour</a></li>
+
+<!-- ##### DISTRIBUTION ENVELOPE #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Distribution Envelope <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./DistributionEnvelopeOverview.html">Overview</a></li>
+		<li><a href="./DistributionEnvelopeSchema.html">Schema</a></li>
+		<li><a href="./DistributionEnvelopeAttributeDescription.html">Element & Attribute Descriptions</a></li>
+		<li><a href="./DistributionEnvelopeExamples.html">Envelope Examples</a></li>
+		<li><a href="./DistributionEnvelopeProfileId.html">ProfileId</a></li>
+	</ul></li>
+<!-- ##### All DMS packs can be navigated to from here #### -->
+	<li><a href="supportPacks.html">Development Resources</a></li>
+	
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="content" class="row">
+<div class="span12">
+<!-- ##### TEXT START#### -->
+<h3>ProfileId</h3>
+
+<h4>Overview</h4>
+<p>The profileId attribute contained in the distribution envelope is a reference 
+to a documented profile. Each specification details the profile 
+identifiers which can be used as well as the details for those 
+profiles.</p>
+
+<p>The schema for the profile content can be found as follows:</p>
+
+	<table class="table table-striped">
+		<thead>
+			<tr><th width="80%">Item</th>
+			<th/>
+			</tr>
+		</thead>
+		<tr>
+			<td>Schema for the ITK Profile.</td>
+			<td width="10%" style="text-align: center; vertical-align:middle"><a href="../../schema/configurationProfile-v2-0.xsd" data-toggle="tooltip" title="View Config Profile Schema" target="_xml"><span class="label label-info implementation-label">View</span></a></td>
+		</tr>
+	</table>
+
+<p>The schema elements and attributes are documented below. Specific rules exist for certain artefacts which are also detailed below.</p>
+
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>ProfileConfig</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td><i>Root element for the schema</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp; profileId</td>
+		<td>1..1</td>
+		<td>II</td>
+		<td>The identifier details for the profile.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @root</td>
+		<td>1..1</td>
+		<td>UID</td>
+		<td>An OID which identifies the scheme from which the 
+		profile identifiers are drawn.&nbsp; For profiles specified in the ITK, 
+		the OID 2.16.840.1.113883.2.1.3.2.4.18.28 should be used.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @extension</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The profile identifier itself.</td>
+	</tr>
+	<tr>
+		<td>&nbsp; messageType</td>
+		<td>1..1</td>
+		<td>CV</td>
+		<td>The identifier details for the profile.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>The identifier of the message type.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>1..1</td>
+		<td>UID</td>
+		<td>An OID which identifies the scheme from which the 
+		message type identifiers are drawn.&nbsp; For message type specified in the ITK, 
+		the OID 2.16.840.1.113883.2.1.3.2.4.18.17 should be used.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The display name of the message type.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td>A grouper for various types of configuration items.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>Identifies the type of configuration item e.g. 
+		Vocabulary, Templates, CMETs (as described below)</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td>Details the particular configuration item.&nbsp; The 
+		population of this element depends on the type of configuration item 
+		being specified.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>0..1</td>
+		<td>CS</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>0..1</td>
+		<td>UID</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>0..1</td>
+		<td>ST</td>
+		<td>See below for configuration item type specific description</td>
+	</tr>
+</table>
+
+<h4>Vocabularies</h4>
+<p>The instance should be populated as follows for vocabularies:</p>
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>This item shall contain the string &quot;Vocabularies&quot;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>0..0</td>
+		<td>CS</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>1..1</td>
+		<td>UID</td>
+		<td>The OID representing the vocabulary.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The name of the vocabulary.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The version of the vocabulary.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	</table>
+
+
+<h4>Templates</h4>
+<p>The instance should be populated as follows for templates:</p>
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>This item shall contain the string &quot;Templates&quot;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>The identifier of the template.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>1..1</td>
+		<td>UID</td>
+		<td>The OID representing the template scheme.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The name of the template.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	</table>
+
+
+<h4>CMETs</h4>
+<p>The instance should be populated as follows for CMETs:</p>
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>This item shall contain the string &quot;CMETs&quot;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>The identifier of the CMET.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>0..0</td>
+		<td>UID</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The name of the CMET.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	</table>
+
+
+<h4>Template Constraints</h4>
+<p>The instance should be populated as follows for Template Constraints:</p>
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>This item shall contain the string &quot;TemplateConstraints&quot;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>0..0</td>
+		<td>CS</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>0..0</td>
+		<td>UID</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The identifier of the Template Constraint.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>This contains version of Template Constraint.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	</table>
+
+
+<h4>Core Schemas</h4>
+<p>The instance should be populated as follows for Core Schemas:</p>
+<table class="table table-striped">
+	<thead><tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data<br/>Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tr>
+		<td>&nbsp; configGroup</td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; @type</td>
+		<td>1..1</td>
+		<td>CS</td>
+		<td>This item shall contain the string &quot;CoreSchemas&quot;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp; configItem</td>
+		<td>1..*</td>
+		<td>&nbsp;</td>
+		<td  bgcolor="#DDDDDD">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @code</td>
+		<td>0..0</td>
+		<td>CS</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codeSystem</td>
+		<td>0..0</td>
+		<td>UID</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemName</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @codesystemVersion</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @name</td>
+		<td>0..0</td>
+		<td>ST</td>
+		<td>This attribute is constrained out.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @version</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>This contains version of Core Schema.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @schemaName</td>
+		<td>1..1</td>
+		<td>ST</td>
+		<td>The identifier of the Core Schema.</td>
+	</tr>
+	</table>
+
+<!-- ##### TEXT END #### -->
+</div>
+</div>
+</div>
+<div id="push"/>
+</div>
+<iframe src="../../includes/footer.html" frameborder="0" scrolling="no" width="100%"></iframe>
+
+<script src="../../Template/js/jquery/jquery-1.8.3.js"> </script><script src="../../Template/js/bootstrap/bootstrap.min.js"> </script>
+<script src="../../Template/js/google-code-prettify/prettify.js"> </script>
+<script>
+!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+</script>
+</body></html>

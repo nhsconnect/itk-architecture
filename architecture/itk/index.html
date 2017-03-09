@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>ITK Architecture</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+		<link href="./Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="./Template/css/base.css" rel="stylesheet" media="screen"/>
+		<link href="./Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="span4">
+						<img src="./Template/images/logo.png"/>
+					</div>
+					<div class="span8">
+						<h4 class="pack-title text-right">
+							ITK Architecture Documentation - Version: 2.2 Status: Final<br/>
+						</h4>
+					</div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+							</button>
+							<div class="nav-collapse collapse">
+								<!-- 					 
+								<p class="navbar-text pull-right">
+									<b>Version: </b>1.1; <b>Status: </b>Final
+								</p>
+								-->
+
+								<!-- ##### MENU HERE #### -->
+
+								<ul class="nav">
+									<!-- ##### OVERVIEW #### -->
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											Overview <b class="caret"> </b>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="./index.html">About</a>
+											</li>
+											<li>
+												<a href="./Core/ArchitectureOverview.html">Architecture Overview</a>
+											</li>
+											<li>
+												<a href="./Core/AccreditationConfigurations.html">Accreditation Configuration</a>
+											</li>
+										</ul>
+									</li>
+									<!-- ##### REQUIREMENTS #### -->
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											Architecture Documents <b class="caret"></b>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="./Core/ClientHostMiddleware.html">Client Host &amp; Middleware</a>
+											</li>
+											<li>
+												<a href="./Core/DistributionEnvelope.html">Distributiion Envelope</a>
+											</li>
+											<li>
+												<a href="./Core/AddressingRouting.html">Addressing &amp; Routing</a>
+											</li>
+										</ul>
+									</li>
+									<!-- ##### TRANSPORT #### -->
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											Transports <b class="caret"></b>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a href="./Core/WebService.html">Web Service</a>
+											</li>
+											<li>
+												<a href="./Core/MESH.html">MESH Transport</a>
+											</li>
+											<li>
+												<a href="./Core/TransactionMessagingService.html">Transaction Messaging Service</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="content" class="row">
+					<div class="span12">
+						<!-- ##### TEXT START#### -->
+						<h3>ITK Architecture Documentation - Overview</h3>
+
+						<p>
+							ITK 2.2 Architecture Documentation Set has been re-organised and re-written to make it simple and easy to understand.
+							This set is intended for a mixed technical audience of individuals within an organisation of all levels intending
+							to develop ITK Accredited Systems, as well as those in the Health and Social Care Architecture communities.
+						</p>
+
+						<p>
+							The following diagram shows how the new set of Architecture Documents have been organised and classified.
+							<img alt="Document Map" src="./Template/images/ITK-2.2-DocMap.png" style="width: 600px;" usemap="#clickDoc"/>
+
+						
+							<map id="" name="clickDoc">
+								<area shape="rect" coords="40,70,565,100" alt="Architecture Overview" href="./Core/ArchitectureOverview.html"/>
+								<area shape="rect" coords="40,115,565,145" alt="Accreditation Configurations" href="./Core/AccreditationConfigurations.html"/>
+								<area shape="rect" coords="25,215,565,245" alt="Client Host Middleware" href="./Core/ClientHostMiddleware.html"/>
+								<area shape="rect" coords="40,260,565,295" alt="Distribution Envelope" href="./Core/DistributionEnvelope.html"/>
+								<area shape="rect" coords="25,305,135,350" alt="Web Service" href="./Core/WebService.html"/>
+								<area shape="rect" coords="155,305,320,350" alt="MESH Transport" href="./Core/MESH.html"/>
+								<area shape="rect" coords="335,305,565,350" alt="Transaction Messaging Service" href="./Core/TransactionMessagingService.html"/>
+								<area shape="rect" coords="25,365,565,395" alt="Addressing Routing" href="./Core/AddressingRouting.html"/>
+								<!-- 
+								<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm"/>
+								<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm"/>
+								-->
+							</map>
+
+
+						</p>
+
+						<p>
+							The ITK accreditation process has been designed to be very straightforward and
+							deliberately light touch, focusing very much on demonstrating technical conformance of the ITK interface
+							against the relevant specifications and standards. The process is completely independent from  both the
+							standards / requirements bodies and the suppliers.
+						</p>
+						<!-- ##### TEXT END #### -->
+					</div>
+				</div>
+			</div>
+			<div id="push"/>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="span6">
+						<p class="text-left">
+							<a href="mailto:interoperabilityteam@hscic.gov.uk">Contact Us</a>
+						</p>
+					</div>
+					<div class="span6">
+						<p class="text-right">
+							<b>Release Date: </b>Oct-2016
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./Template/js/jquery/jquery-1.8.3.js"> </script>
+		<script src="./Template/js/bootstrap/bootstrap.min.js"> </script>
+		<script src="./Template/js/google-code-prettify/prettify.js"> </script>
+		<script>
+			!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+		</script>
+	</body>
+</html>

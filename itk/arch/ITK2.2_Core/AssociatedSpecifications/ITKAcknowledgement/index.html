@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>ITK Acknowlegement - About</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="Template/css/base.css" rel="stylesheet" media="screen"/>
+		<link href="Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="span4"><img src="Template/images/logo.png"/></div>
+					<div class="span8"><h4 class="pack-title text-right">Interoperability Toolkit<br/>Acknowledgement Framework</h4></div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+							</button>
+							<div class="nav-collapse collapse">
+							<p class="navbar-text pull-right"><b>Version: </b>2.0; <b>Status: </b>Final</p>
+
+								<ul class="nav">
+									<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+										<ul class="dropdown-menu">
+											<li><a href="index.html">About</a></li>
+											<li><a href="Core/changehistory.html">Change History</a></li>
+											<li><a href="Core/glossary.html">Glossary</a></li>
+										</ul>
+									</li>
+									<li><a href="Domains/Document Files/InfrastructureAck.html">Infrastructure Acknowledgement </a></li>	
+									<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Business Acknowledgement <b class="caret"> </b></a>
+										<ul class="dropdown-menu">											
+											<li><a href="Domains/Document Files/messages.html">Messages</a></li>
+											<li><a href="Domains/Document Files/examples.html">Examples</a></li>
+											<li><a href="Domains/Document Files/datatypes.html">Data Type Specification</a></li>
+											<li><a href="Domains/Document Files/profiles.html">Profiles</a></li>
+										</ul>
+									</li>	
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="span12">
+<!-- ##### TEXT START#### -->
+<h3>Handling Specifications & Acknowledgement Framework</h3>
+<div>
+<p>The ITK Acknowledgement Framework is configurable on a message by message basis by setting handling specification to either "true" or "false" in the ITK Distribution Envelope, as described below.</p>
+<p>There are 3 handling specification that can be used to generate acknowledgements from message recipients. A fourth handling specification is used to carry an interaction identifier. All handling specifications are key/value pairs.<br/>
+Please note that all acknowledgement responses are to be wrapped in a Distribution Envelope.
+</p>
+<h4><u>Infrastructure Acknowledgement</u></h4>
+<p>Key <b>urn:nhs-itk:ns:201005:infackrequested</b></p>
+<p>The purpose of the Infrastructure Acknowledgement is to inform the sender that an ITK payload 
+has been delivered to a component that has processed and validated the Distribution Envelope.</p>
+<p>When the value attribute is set to <b>"true"</b>, the recipient should reply to the message with an Infrastructure Acknowledgement. An Infrastructure Acknowledgement is generated when the message has been successfully received by the end point specified in the transport wrapper.</p>
+<p>When the value attribute is set to <b>"false"</b>, the recipient should not reply to the message with an Infrastructure Acknowledgement. The message sender is under no obligation to process any Infrastructure Acknowledgement related to the message.</p>
+<h4><u>Business Acknowledgement</u></h4>
+<p>Key <b>urn:nhs-itk:ns:201005:ackrequested</b></p>
+<p>The purpose of the Business Acknowledgement is Domain Message Specification/payload/context sensitive and can 
+for example inform the sender that the payload has been processed and/or delivered to a 
+clinician for review.</p>
+<p>When the value attribute is set to <b>"true"</b>, the recipient should reply to the message with a Business Acknowledgement. A Business Acknowledgement is sent when the message has been successfully processed by the recipient.</p>
+<p><p>When the value attribute is set to <b>"false"</b>, the recipient should not send a Business Acknowledgement. The message sender is under no obligation to process any Business Acknowledgement related to the message.</p>
+<h4><u>Business Response</u></h4>
+<p>Key <b>urn:nhs-itk:ns:201005:busresponserequested</b></p>
+<p>A Business Response is defined as part of an interaction, for example an accept or reject in response to a request.</p>
+<p>When the value attribute is set to <b>"true"</b>, the recipient should reply to the message with a Business Response. Business Responses, where appropriate, are specified in Domain Message Specifications. For example, the Health and Social Care Integration domain specifies that a Contact Assessment (when acting as a referral) has a Business Response of either accepting or rejecting the referral.</p>
+<p>When the value attribute is set to <b>"false"</b>, the recipient should not reply to the message with a Business Response. The message sender is not expecting any business response in relation to the message.</p>
+<h4><u>Interaction Identifier</u></h4>
+<p>Key <b>urn:nhs-itk:ns:201005:urn:nhs-itk:ns:201005:interaction</b></p>
+<p>The interaction identifier, when looked up in the relevant Domain Message Specification, describes behaviours for the sender and receiver of messages. For example requesting and receiving acknowledgements and appropriate responsibilities for copy and primary message recipients.</p>
+<p>The value attribute of the interaction handling specification is set to the interaction identifier from the relevant Domain Message Specification.</p>
+<br/><br/>
+<h4>Summary of all ITK Handling Specifications</h4>
+<table class="table table-striped">
+<thead>
+<tr><th width="35%">Key</th><th width="15%">Value</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>urn:nhs-itk:ns:201005:infackrequested</td><td>true or false</td><td>When set to "true" requests an infrastructure acknowledgement upon receipt of this message</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:ackrequested</td><td>true or false</td><td>When set to "true" requests a business acknowledgement for this message</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:busresponserequested</td><td>true or false</td><td>When set to "true" requests a business response as a reply to this message</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:interaction</td><td>interaction identifier</td><td>Carries the interaction identifier found in the Domain Message Specification of the message being sent.</td></tr>
+</tbody>
+</table>
+<h4>Acknowledgement Framework Configurations</h4>
+<p>Acknowledgements are configurable by setting handling specifications to "true" or "false" per message.</p>
+<h5>Request Only Messaging Configuration</h5>
+<p>This is equivalent to "fire-and-forget" where no response (other than the default transport level response) is required.</p>
+<table class="table table-striped">
+<thead>
+<tr><th width="35%">Key</th><th width="15%">Value</th>
+</thead>
+<tbody>
+<tr><td>urn:nhs-itk:ns:201005:infackrequested</td><td>false</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:ackrequested</td><td>false</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:busresponserequested</td><td>false</td></tr>
+</tbody>
+</table>
+<h5>Request Response Messaging Configuration</h5>
+<p>Depending on the level of response required, the handling specification key value pairs can be set to either true or false. Below are some examples of acknowledgement requests. Note that any combination of acknowledgements may be requested, depending upon business needs and requirements.</p>
+<h5>To request an Infrastructure Acknowledgement only</h5>
+<table class="table table-striped">
+<thead>
+<tr><th width="35%">Key</th><th width="15%">Value</th>
+</thead>
+<tbody>
+<tr><td>urn:nhs-itk:ns:201005:infackrequested</td><td>true</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:ackrequested</td><td>false</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:busresponserequested</td><td>false</td></tr>
+</tbody>
+</table>
+<h5>To request an Infrastructure Acknowledgement and a Business Acknowledgement</h5>
+<table class="table table-striped">
+<thead>
+<tr><th width="35%">Key</th><th width="15%">Value</th>
+</thead>
+<tbody>
+<tr><td>urn:nhs-itk:ns:201005:infackrequested</td><td>true</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:ackrequested</td><td>true</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:busresponserequested</td><td>false</td></tr>
+</tbody>
+</table>
+<h5>To request an Infrastructure Acknowledgement, a Business Acknowledgement and a Business Response</h5>
+<table class="table table-striped">
+<thead>
+<tr><th width="35%">Key</th><th width="15%">Value</th>
+</thead>
+<tbody>
+<tr><td>urn:nhs-itk:ns:201005:infackrequested</td><td>true</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:ackrequested</td><td>true</td></tr>
+<tr><td>urn:nhs-itk:ns:201005:busresponserequested</td><td>true</td></tr>
+</tbody>
+</table>
+</div>
+<!-- ##### TEXT END #### -->
+</div>
+</div>
+</div>
+				
+				<iframe src="includes/footer.html" frameborder="0" scrolling="no" width="100%"></iframe>
+				
+				<script src="Template/js/jquery/jquery-1.8.3.js"> </script><script src="Template/js/bootstrap/bootstrap.min.js"> </script><script src="Template/js/google-code-prettify/prettify.js"> </script><script>
+				!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+				</script></body></html>

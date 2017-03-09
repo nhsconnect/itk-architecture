@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<head>
+<title>Core - Distribution Envelope Example</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<link href="../../Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/base.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div id="wrap">
+<div class="container">
+<div class="row">
+<div class="span4">
+<img src="../../Template/images/logo.png"/>
+</div>
+<div class="span8">
+<h4 class="pack-title text-right">Interoperability Toolkit<br/>Core</h4>
+</div>
+</div>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+</button><div class="nav-collapse collapse">
+<p class="navbar-text pull-right"><b>Version: </b>2.0; <b>Status: </b>Final</p>
+
+<!-- ##### MENU HERE #### -->
+
+<ul class="nav">
+<!-- ##### OVERVIEW #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+	<ul class="dropdown-menu">
+		<li><a href="../../index.html">About</a></li>
+		<li><a href="../../Core/changehistory.html">Change History</a></li>
+		<li><a href="../../Core/UpgradeGuide.html">Upgrade Guide</a></li>
+	</ul></li>
+<!-- ##### CORE SERVICES #### -->
+	<li><a href="CoreServices.html">ITK Behaviour</a></li>
+	
+<!-- ##### DISTRIBUTION ENVELOPE #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Distribution Envelope <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./DistributionEnvelopeOverview.html">Overview</a></li>
+		<li><a href="./DistributionEnvelopeSchema.html">Schema</a></li>
+		<li><a href="./DistributionEnvelopeAttributeDescription.html">Element & Attribute Descriptions</a></li>
+		<li><a href="./DistributionEnvelopeExamples.html">Envelope Examples</a></li>
+		<li><a href="./DistributionEnvelopeProfileId.html">ProfileId</a></li>
+	</ul></li>
+
+<!-- ##### All DMS packs can be navigated to from here #### -->
+	<li><a href="supportPacks.html">Development Resources</a></li>
+	
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="content" class="row">
+<div class="span12">
+<!-- ##### TEXT START#### -->
+<h3>Sending a CDA Document to Two Recipients</h3>
+<h4>Scenario </h4>
+
+<p>The "Anytown General Hospital" needs to send an ITK Discharge Summary for the 
+now completed in-patient stay for Mrs. Smith. Mrs. Smith has been discharged 
+from the care of the Oncology team in the hospital. The Discharge Summary needs 
+to be delivered to Mrs. Smith's General Practice "The Surgery, Townville", and 
+in particular to her regular General Practitioner Dr. Brown. It is the 
+hospital's practice to request both an infrastructure acknowledgement and business acknowledgement from GP practices to show that 
+Discharge Summaries have been received into the GP practice system. The 
+document is also sent to the hospital's off-site document repository. Some 
+metadata about the ITK Discharge Summary is also sent.</p>
+
+<h4>Codes used in this example </h4>
+
+<ul>
+	<li>Anytown General Hospital has an Organisation Data Service (ODS) code of &quot;R59&quot; 
+	</li>
+	<li>Anytown General Hospital's off-site document repository ODS site code &quot;R592&quot; 
+	</li>
+	<li>The Surgery, Townville has an ODS code of &quot;Y88764&quot; </li>
+	<li>Dr. Brown has a General Medical Council code of &quot;G1234567&quot; 
+	</li>
+	<li>Mrs. Smith's NHS Number is &quot;2345678901&quot; </li>
+	<li>The discharge summary interaction id is &quot;<font FACE="Arial">urn:nhs-itk:interaction:primaryRecipienteDischargeInpatientDischargeSummaryDocument-v1-0</font>&quot; 
+	</li>
+</ul>
+
+<h4>Acknowledgement related handling specifications</h4>
+<ul>
+	<li>urn:nhs-itk:ns:201005:infackrequested set to "true"</li>
+	<li>urn:nhs-itk:ns:201005:ackrequested set to "true"</li>
+	<li>urn:nhs-itk:ns:201005:busresponserequested set to "false"</li>
+</ul>
+
+<h4>Creating the distribution envelope for a CDA document transmission 
+(with metadata) requiring an acknowledgement </h4>
+
+<p>The CDA document has been created by an author working for the Oncology team 
+for Anytown General Hospital, it has been attested to, and is ready for 
+transmission to Mrs. Smith's General Practice (in particular Dr. Brown). 
+Metadata has also been generated for the document.</p>
+
+<h4>Completing the Distribution Envelope </h4>
+
+<p>A description of the Distribution Envelope elements and attributes can be found <a href="./DistributionEnvelopeAttributeDescription.html">here</a></p>
+<table class="table table-striped">
+	<tr bgcolor="#99CCFF">
+		<td><b>Name</b></td>
+		<td><b>Notes</b></td>
+		<td width="440"><b>Value</b></td>
+	</tr>
+	<tr>
+		<td><i>header</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @Service</td>
+		<td>As Anytown General Hospital is sending a transmission 
+		over ITK, they must choose an appropriate service under which to send 
+		the transmission. "SendCDADocument-v2-0" is the service that should be 
+		used to transmit CDA documents.</td>
+		<td width="440"><b>
+		urn:nhs-itk:services:201005:SendCDADocument-v2-0</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @trackingid</td>
+		<td>A UUID for the transmission</td>
+		<td width="440"><b>7D6D9D40-AE1A-11DB-97F8-B18E1E0994BB</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; addresslist</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type</td>
+		<td>The default address type is used in this example, so 
+		this attribute is omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @uri</td>
+		<td>The ITK compliant address of Mrs Smith's GP (GMC number 
+		of G1234567), to whom the CDA document is destined.</td>
+		<td width="440"><b>
+		urn:nhs-uk:addressing:ods:Y88764:G1234567</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type</td>
+		<td>The default address type is used in this example, so 
+		this attribute is omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @uri</td>
+		<td>The ITK compliant address of the hospital's document repository</td>
+		<td width="440"><b>
+		urn:nhs-uk:addressing:ods:R592:DocRepository</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; auditIdentity</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; id</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type</td>
+		<td>The default address type is used in this example, so 
+		this attribute is omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @uri</td>
+		<td>The address on the Oncology team working for Anytown 
+		General Hospital (ODS code R59), who originated the document</td>
+		<td width="440"><b>
+		urn:nhs-uk:identity:ods:R59:oncology</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; manifest</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @count</td>
+		<td>A count of the manifests.</td>
+		<td width="440"><b>2</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; manifestitem</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @id</td>
+		<td>The identifier of the metadata payload</td>
+		<td width="440"><b>uuid_7D73B7C0-AE1A-11DB-982C-B18E1E0994FF</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@mimetype</td>
+		<td>The mime type of the metadata document.</td>
+		<td width="440"><b>text/xml</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@profileid</td>
+		<td>As no profile is available for this document type, this 
+		attribute is omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@metadata</td>
+		<td>As this is a metadata payload, this attribute is set to 
+		"true"</td>
+		<td width="440"><b>true</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@compressed</td>
+		<td>As this payload isn't compressed, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@base64</td>
+		<td>As this payload isn't in base64, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@encrypted</td>
+		<td>As this payload isn't encrypted, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; manifestitem</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @id</td>
+		<td>The identifier of the CDA payload</td>
+		<td width="440"><b>uuid_7D73B7C0-AE1A-11DB-982C-B18E1E0994AB</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@mimetype</td>
+		<td>The mime type of the CDA document</td>
+		<td width="440"><b>text/xml</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@profileid</td>
+		<td>Profile for the discharge summary</td>
+		<td width="440"><font FACE="Arial"><b>
+		urn:nhs-en:profile:eDischargeInpatientDischargeSummary-v1-0</b></font></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@metadata</td>
+		<td>As this isn't a metadata payload, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@compressed</td>
+		<td>As this payload isn't compressed, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@base64</td>
+		<td>As this payload isn't in base64, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@encrypted</td>
+		<td>As this payload isn't encrypted, this attribute is 
+		defaulted to false and omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; senderAddress</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type</td>
+		<td>The default address type is used in this example, so 
+		this attribute is omitted</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @uri</td>
+		<td>The address on the Oncology team working for Anytown 
+		General Hospital (ODS code R59), who originated the document</td>
+		<td width="440"><b>
+		urn:nhs-uk:addressing:ods:R59:oncology</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; handlingSpecifications</i></td>
+		<td>Handling specifications are required to send a business 
+		acknowledgement and for the Discharge summary interaction</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spec</i></td>
+		<td>&nbsp;</td>
+		<td width="430">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @key</td>
+		<td>Key for Infrastructure ACK to be returned</td>
+		<td width="430">
+		<b>urn:nhs-itk:ns:201005:infackrequested</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @value</td>
+		<td>Value for the key is True</td>
+		<td width="430"><b>true</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spec</i></td>
+		<td>&nbsp;</td>
+		<td width="430">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @key</td>
+		<td>Key for Business ACK to be returned</td>
+		<td width="430">
+		<b>urn:nhs-itk:ns:201005:ackrequested</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @value</td>
+		<td>Value for the key is True</td>
+		<td width="430"><b>true</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spec</i></td>
+		<td>&nbsp;</td>
+		<td width="430">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @key</td>
+		<td>Key for Business Response to be returned</td>
+		<td width="430">
+		<b>urn:nhs-itk:ns:201005:busresponserequested</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @value</td>
+		<td>Value for the key is False</td>
+		<td width="430"><b>false</b></td>
+	</tr>	
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; spec</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @key</td>
+		<td>Key for the interaction</td>
+		<td width="440">
+		<span style="font-size: 11.0pt; font-family: Arial; font-weight: 700">
+		urn:nhs-itk:ns:201005:</span><b>interaction</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @value</td>
+		<td>Value for the key is the interaction id</td>
+		<td width="440"><font FACE="Arial"><b>
+		urn:nhs-itk:interaction:primaryRecipienteDischargeInpatientDischargeSummaryDocument-v1-0</b></font></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp; payloads</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @count</td>
+		<td>The number of payloads is 2</td>
+		<td width="440"><b>2</b></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; payload</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @id</td>
+		<td>The locally assigned UUID for the metadata payload (matches the manifest.id describing this payload)</td>
+		<td width="440"><b>uuid_7D73B7C0-AE1A-11DB-982C-B18E1E0994FF</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@filename</td>
+		<td>As filename is used for payloads such as images, it is 
+		omitted.</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; payload</i></td>
+		<td>&nbsp;</td>
+		<td width="440">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @id</td>
+		<td>The locally assigned UUID for the CDA payload (matches the manifest.id describing this payload)</td>
+		<td width="440"><b>uuid_7D73B7C0-AE1A-11DB-982C-B18E1E0994AB</b></td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		@filename</td>
+		<td>As filename is used for payloads such as images, it is 
+		omitted.</td>
+		<td width="440"><i>Intentionally blank</i></td>
+	</tr>
+</table>
+
+<h4>Distribution Envelope Instance</h4>
+<p>The XML instance is shown below.</p>
+<table class="table table-striped">
+<thead>
+	<tr><th width="80%">Item</th>
+	<th/>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td>The XML file for sending to two recipients</td>
+		<td width="10%" style="text-align: center; vertical-align:middle"><a href="../Examples/DEexCDAMETA.xml" data-toggle="tooltip" title="View XML file" target="_xml"><span class="label label-info implementation-label">View</span></a></td>
+	</tr>
+</tbody>
+</table>
+
+<br/>
+
+<img border="0" src="../Document%20Images/DEexCDAMETA.png" width="858" height="391">
+
+<!-- ##### TEXT END #### -->
+</div>
+</div>
+</div>
+<div id="push"/>
+</div>
+<iframe src="../../includes/footer.html" frameborder="0" scrolling="no" width="100%"></iframe>
+
+<script src="../../Template/js/jquery/jquery-1.8.3.js"> </script><script src="../../Template/js/bootstrap/bootstrap.min.js"> </script>
+<script src="../../Template/js/google-code-prettify/prettify.js"> </script>
+<script>
+!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+</script>
+</body></html>

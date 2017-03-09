@@ -1,0 +1,9 @@
+img.inline-right-image
+{
+	display: inline-block;
+	width: 100px;
+	position: relative;
+	float: right;
+	margin: 10px;
+	z-index: 1;
+}

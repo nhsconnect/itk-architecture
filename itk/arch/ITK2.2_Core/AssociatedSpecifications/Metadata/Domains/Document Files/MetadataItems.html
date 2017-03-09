@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Metadata Items</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="../../Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="../../Template/css/base.css" rel="stylesheet" media="screen"/>
+		<link href="../../Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="container">
+				<div class="row">
+					<div class="span4"><img src="../../Template/images/logo.png"/></div>
+					<div class="span8"><h4 class="pack-title text-right">Interoperability Toolkit<br/>Clinical Correspondence Metadata</h4></div>
+				</div>
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="container">
+							<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+								<span class="icon-bar"/>
+							</button>
+							<div class="nav-collapse collapse">
+								<p class="navbar-text pull-right"><b>Version: </b>1.0; <b>Status: </b>Final</p>
+								<ul class="nav">
+									<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+										<ul class="dropdown-menu">
+											<li><a href="../../index.html">About</a></li>
+											<li><a href="../../Core/changehistory.html">Change History</a></li>
+											<li><a href="../../Core/glossary.html">Glossary</a></li>
+										</ul>
+									</li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Metadata Definition <b class="caret"> </b></a>
+										<ul class="dropdown-menu">											
+											<li><a href="./MetadataOverview.html">Metadata Overview</a></li>
+											<li><a href="./MetadataItems.html">Metadata Items</a></li>
+										</ul>
+									</li>		
+									<li><a href="./MetadataSchema.html">Metadata Schema</a></li>
+									<li><a href="../../Examples/examples.html">Examples</a></li>
+									<li><a href="../../AssociatedSpecifications/AssociatedSpecifications.html">Associated Specifications</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="content" class="row">
+					<div class="span12">
+						<h3>Metadata Items</h3>
+						
+<p>The metadata items for use within the ITK framework are documented below. 
+Metadata is optionally sent in support of ITK Correspondence payloads.</p>
+
+<p>The metadata is based on 
+a subset of IHE's Extrinsic Object metadata 
+profile, which in turn is based on based on OASIS ebXML Registry standard. If a 
+more extensive metadata set is required, for example to support a Cross 
+Enterprise Document Sharing (XDS) repository, then the relevant IHE specification 
+should be consulted.</p>
+<br/>
+<h4>Format of Metadata</h4>
+
+<p>Metadata items are generally represented as either Slots or 
+Classifications. Consult the <b>rim.xsd</b> schema in the <b>Interoperability Toolkit Core 
+pack</b> for more details. </p>
+
+<p>A <b>Slot</b> is a named string list that provides metadata for an object in a 
+name / value list pair. A Slot's format includes</p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">Slotname</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">Metadata 
+Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><br/>
+
+<p><b>Classifications</b> use terminologies to record metadata. 
+Their format includes</p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid 
+of classification instance</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid 
+of classification scheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000">
+<br/>
+&nbsp;&nbsp;&nbsp; classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">object 
+identifier</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codeValue</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Name</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">Display 
+name for the codeValue</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">identifier 
+for codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+&nbsp;<h4>Definition of Metadata Items</h4>
+
+<p>Metadata wrapper and item definitions used to support ITK payloads are listed below.</p>
+<h4>metadataPayload</h4>
+<table class="table" width="100%" id="table31">
+	<tr>
+		<th>Optionality</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>Mandatory</td>
+		<td>A wrapper for the extrinsic 
+		object</td>
+	</tr>
+	<tr>
+		<th colspan="2">Derivation</th>
+	</tr>
+	<tr>
+		<td colspan="2"><i>&lt;none&gt;</i></td>
+	</tr>
+	</table>
+<p><b>Notes</b></p>
+<p>The ITK metadata (which includes metadata for all payloads in an ITK 
+transmission) is wrapped using the itkmetadata.xsd schema. For details of the 
+itkmetadata.xsd schema see the Interoperability Toolkit Core pack.</p>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">itk:metadataPayload</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ExtrinsicObject</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+mimeType</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">application/pdf</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+objectType</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...metadata items as described 
+below...<br/>
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ExtrinsicObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">itk:metadataPayload</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>ExtrinsicObject </h4>
+<p>The ExtrinsicObject 
+		encapsulates the metadata items. It has the following attributes</p>
+
+<table class="table" id="table32">
+	<tr>
+		<td><b>id</b></td>
+		<td>The id attribute is the id of 
+		the payload being described. This is the same Identifier as described on 
+		the manifestItem/@id and payload/@id for the payload being described</td>
+	</tr>
+	<tr>
+		<td><b>mimeType</b></td>
+		<td>The mimeType is the payload mimeType, and 
+		should match that mimeType defined in the manifest for the payload</td>
+	</tr>
+	<tr>
+		<td><span style="font-weight: 700">objectType</span></td>
+		<td>This is fixed to the IHE defined UUID 
+		&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;</td>
+	</tr>
+	</table>
+	
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ExtrinsicObject</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+mimeType</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">application/pdf</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+objectType</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp; ...metadata items as described below...<br/>
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ExtrinsicObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>Creation Time</h4>
+<p>Represents the time of creation of the payload.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Slot</b></p>
+<table class="table" id="table2">
+	<tr>
+		<td><b>Slot name</b></td>
+		<td>This is fixed to 
+		&quot;creationTime&quot;</td>
+	</tr>
+	<tr>
+		<td><span style="font-weight: 700">Value</span></td>
+		<td><span style="font-weight: 400">The creation 
+		date of the payload. Format using the HL7 v2.5 data type TS</span>
+		<span style="font-weight: 400">For example, for a CDA document this would be the 
+		effectiveTime for the document</span>
+		<p>/ClinicalDocument/effectiveTime/@value</td>
+	</tr>
+	</table>
+	
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">creationTime</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">20101020141500</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>L<b>anguage Code</b></h4>
+<p>Specifies the language of character data in the payload.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Slot</b></p>
+
+<table class="table" id="table3">
+	<tr>
+		<td><b>Slot name</b></td>
+		<td>Fixed to &quot;languageCode&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>The language in which the payload appears. 
+		The values are language identifiers as described by the Internet 
+		Engineering Task Force (IETF), RFC 1766</td>
+	</tr>
+	</table>
+	
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">languageCode</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">en-GB</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4><b>Source Patient Identifier</b></h4>
+<p>The patient identifier that represents the 
+		subject of care of the payload.</p>
+
+<p>Optionality: <b>Mandatory [1..1]</b></p>
+<p>Metadata type: <b>Slot</b></p>
+
+<table class="table" id="table3">
+	<tr>
+		<td><b>Slot name</b></td>
+		<td>Fixed to &quot;sourcePatientId&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>The identifier for the patient as defined 
+		in the payload. This may 
+		be a NHS number, or a local patient identifier. Value includes the 
+		assigning authority domain identifier, as well as the patient identifier 
+		in the format 
+
+		of the HL7 v2.5 data type CX.<br/><br/>
+		For example, in a CDA document this would be sourced from the record 
+		target id attribute
+		<br/>assigningAuthorityDomainIdentifier = 
+		/ClinicalDocument/recordTarget/patientRole/id/@extension
+		<br/>patientIdentifier = 
+		/ClinicalDocument/recordTarget/patientRole/id/@root</td>
+	</tr>
+	</table>
+<b>Note</b><p>If more than one patient identifier is listed in the document, by 
+preference the NHS Number should be used.</p>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">sourcePatientId</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">1234567891^^^2.16.840.1.113883.2.1.4.1</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>
+<b>Source Patient Information</b></h4>
+<p>Demographic information relating to the patient.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Slot</b></p>
+
+
+<table class="table" id="table3">
+	<tr>
+		<td><b>Slot name</b></td>
+		<td>Fixed to &quot;sourcePatientInfo&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>Demographic information relating to the 
+		patient. Demographic information captured for metadata includes patient 
+		given and family names, gender,&nbsp; date of birth, address and telecom details.<br/><br/>
+		For the format of patient <b>name</b> see the &quot;HL7 v2 ADT Interoperability Message Specification&quot; Patient Identification (PID) 
+		section 5<br/>
+		For the format of patient <b>gender</b> see the &quot;HL7 v2 ADT Interoperability Message Specification&quot; Patient Identification (PID) 
+		section 8<br/>
+		For the format of patient <b>date of birth</b> see the &quot;HL7 v2 ADT Interoperability Message Specification&quot; Patient Identification (PID) 
+		section 7<br/>
+		For the format of patient <b>address</b> see the &quot;HL7 v2 ADT Interoperability Message Specification&quot; Patient Identification (PID) 
+		section 11<br/>
+		For the format of patient <b>telecom</b> see the &quot;HL7 v2 ADT Interoperability Message Specification&quot; Patient Identification (PID) 
+		section 13<br/>
+		<br/>
+		For example, in a CDA document this would be sourced from the following record 
+		target attributes
+		<br/>/ClinicalDocument/recordTarget/patientRole/patient/name/given
+		<br/>/ClinicalDocument/recordTarget/patientRole/patient/name/family
+		<br/>/ClinicalDocument/recordTarget/patientRole/patient/administrativeGenderCode/@displayName
+		<br/>/ClinicalDocument/recordTarget/patientRole/patient/birthTime/@value
+		<br/>/ClinicalDocument/recordTarget/patientRole/telecom/@value
+		<br/>/ClinicalDocument/recordTarget/patientRole/addr</td>
+	</tr>
+	</table>
+
+</h4>
+
+<p><b>Note</b></p>
+<p>Patient demographic data will not always be present or complete in payloads. 
+Partial patient demographic data may be sent. Some 
+demographic information may have more than one value (for example there may be 
+several telecoms for a patient).</p>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">sourcePatientInfo</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">PID-5|Taylor^Belinder^^^Mrs^^L</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">PID-7|19561203</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">PID-8|F</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">PID-11|The 
+Anytown Retirement Home^1 Church Street^Anytown^^AN6 7UY^^H</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">PID-13|tel: 
+0123 456789^^^^^^^H</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4><b>Title</b></h4>
+<p>The title associated with the payload</p>
+
+<p>Optionality: <b>Mandatory [1..1]</b></p>
+<p>Metadata type: <b>Name</b></p>
+
+<table class="table" id="table3">
+	<tr>
+		<td><b>Value</b></td>
+		<td>The title of the payload.<br/><br/>
+		For example, in a CDA document this would be sourced from the clinical 
+		document title<p>/ClinicalDocument/title</td>
+	</tr>
+	</table>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">NHS 
+Continuing Healthcare Checklist Assessment</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;/&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<body>
+<h4>Comments</h4>
+<p>Comments may be optionally incorporated in the metadata. The content of any 
+comments will be arbitrary, and at the discretion of the sender.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Description</b></p>
+
+<table class="table" id="table33">
+	<tr>
+		<td><b>Value</b></td>
+		<td>Comments associated with the payload</td>
+	</tr>
+	</table>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Description</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">This 
+document was produced automatically from digital dictation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;/&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Description</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+
+<hr/>
+<h4>
+	Author Classification</h4>
+<p>Optionality: <b>Mandatory [1..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<br/>
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td>This is a generated UUID representing this instance of an author 
+classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the 
+IHE UUID for an author classification &quot;urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d<font COLOR="#0000ff">&quot;</font></td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>In the case of an author classification 
+		this is left 
+null</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;authorPerson&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>The name of the author in the format of the HL7 v2.5 XCN data type..</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;authorInstitution&quot;</td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>The organisation associated with the 
+		author. This is based on the HL7 v2.5 XON data 
+		type.</td>
+	</tr>
+		<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;authorSpecialty&quot;</td>
+	</tr>
+	<tr>
+	
+		<td><b>Value</b></td>
+		<td>
+		The specialty (i.e. job role) of the author</td>
+	</tr>
+	</table>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:a4613c9a-72fb-4f0a-b7a7-9f99934462a6</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">authorPerson</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">1234512345^Bradwick^June^^^Ms^^^1.2.826.0.1285.0.2.0.65</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">authorInstitution</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">East 
+Cheshire NHS Trust^^R56</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">authorSpecialty</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">Staff 
+Nurse</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>Type Code Classification</h4>
+<p>A code specifying the precise kind of payload (particularly relevant to 
+documents).</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td>This is a generated UUID representing this instance of a classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the 
+IHE UUID for a type code classification <font COLOR="#0000ff">&quot;</font>urn:uuid:f0306f51-975f-434e-a61c-c59651d33983<font COLOR="#0000ff">&quot;</li>
+	</font>
+		</td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>This is the type code being described. 
+		<br/><br/>
+		For example, in CDA this value is sourced from /ClinicalDocument/code/@code<br/>
+		(In the case of a compositional statement used to describe the document 
+		code, the whole of the compositional statement should be used.)</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;codingScheme&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>This is the code for the coding scheme that produced the code in the 
+		nodeRepresentation<br/><br/>		For example, in CDA this value is sourced from 
+		/ClinicalDocument/code/@codeSystem</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Name </b></td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>This is the display name associated with 
+		the code being carried in the nodeRepresentation<br/><br/>
+		For example, in CDA this value may be sourced from 
+		/ClinicalDocument/code/@displayName (if present) or /ClinicalDocument/title</td>
+	</tr>
+		</table>
+		
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:684ac2db-8ee5-4d40-9c49-362d7181bd10</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:f0306f51-975f-434e-a61c-c59651d33983</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">766781000000107</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">2.16.840.1.113883.2.1.3.2.4.15</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">NHS 
+Continuing Healthcare Checklist Assessment</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>Format Code Classification</h4>
+<p>Format code is more specific than type code. Format code is sufficiently 
+specific to ensure processing and display by identifying a payload encoding and 
+structure. Format code is particularly relevant to documents.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td>This is a generated UUID representing this instance of a classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the 
+IHE UUID for a format code classification <font COLOR="#0000ff">&quot;</font>urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d<font COLOR="#0000ff">&quot;</li>
+	</font>
+		</td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>This is the format code being described. 
+		In terms of CDA, this is the message type.<br/><br/>
+		For example, in CDA this value is sourced from
+		/ClinicalDocument/messageType/@extension</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;codingScheme&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>This is the code for the coding scheme that produced the code in the 
+		nodeRepresentation<br/><br/>
+		For example, in CDA this value is sourced from
+		/ClinicalDocument/messageType/@root</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Name </b></td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>This is the display name associated with 
+		the code being carried in the nodeRepresentation<br/><br/>
+		For example, in CDA this value is sourced from
+		/ClinicalDocument/messageType/@extension</td>
+	</tr>
+		</table>
+<br/>		
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:f8f832d5-7243-461c-b32c-6501e6ac17a3</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">POCD_MT010011GB01</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">2.16.840.1.113883.2.1.3.2.4.18.17</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">POCD_MT010011GB01</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<p>
+<br/><hr/>
+<h4>Healthcare Facility Classification</h4>
+Represents
+the type of healthcare facility that formed the setting for the clinical 
+encounter to which the payload relates.
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td>This is a generated UUID representing this instance of a classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the 
+IHE UUID for a healthcare facility classification &quot;urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d&quot;</li>
+
+		</td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>This is the healthcare facility code being 
+		described. In terms of CDA, this is the encompassing encounter 
+		healthcare facility code<br/><br/>
+		For example, in CDA this value is sourced from /ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code/@code</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;codingScheme&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>This is the code for the coding scheme that produced the code in the 
+		nodeRepresentation<br/><br/>
+		For example, in CDA this value is sourced from /ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code/@codeSystem</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Name </b></td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>This is the display name associated with 
+		the code being carried in the nodeRepresentation<br/><br/>
+		For example, in CDA this value is sourced from /ClinicalDocument/componentOf/encompassingEncounter/location/healthCareFacility/code/@displayName</td>
+	</tr>
+		</table>
+</p>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:0e58528b-3d10-42a3-bf27-3c53d338efe8</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">30629002</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">2.16.840.1.113883.2.1.3.2.4.15</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">Retirement 
+Home</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+<hr/>
+<h4>Practice Setting Classification</h4>
+<p>Represents the clinical specialty where the act that produced the payload was 
+performed.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td>This is a generated UUID representing this instance of a classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the IHE UUID for a 
+		practice setting 
+		code classification <font COLOR="#0000ff">&quot;</font>urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead<font COLOR="#0000ff">&quot;</font></li>
+
+		</td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>This is the practice setting code being 
+		described. <br/><br/>In terms of CDA when using a compositional 
+		expression of document type, this is the care setting type.</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;codingScheme&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>This is the code for the coding scheme that produced the code in the 
+		nodeRepresentation</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Name </b></td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>This is the display name associated with 
+		the code being carried in the nodeRepresentation</td>
+	</tr>
+		</table>
+<br/>
+
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:ab211cd1-6eac-40fe-81c1-a15ae4367de5</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">309929007</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+&nbsp;&nbsp;&nbsp; </font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">2.16.840.1.113883.2.1.3.2.4.15</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">Clinical 
+genetics department</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+
+<hr/>
+<h4>Confidentiality Classification</h4>
+<p>The confidentiality level attached to the payload. If no confidentiality 
+level is specified in the payload, then a vocabulary of</p>
+<p>&quot;<b>N</b>&quot; - Normal</p>
+<p>&quot;<b>R</b>&quot; - Restricted</p>
+<p>&quot;<b>V</b>&quot; - Very Restricted</p>
+<p>may be used.</p>
+
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Classification</b></p>
+
+	<table class="table" id="table3">
+	<tr>
+		<td width="12%" rowspan="4"><b>Classification</b></td>
+		<td width="150"><b>id</b></td>
+		<td valign="top" align="left">This is a generated UUID representing this instance of a classification</td>
+	</tr>
+	<tr>
+		<td><b>classificationScheme</b></td>
+		<td>This is fixed to the IHE UUID for a 
+		confidentiality classification <font COLOR="#0000ff">&quot;</font>urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f<font COLOR="#0000ff">&quot;</font></li>
+
+		</td>
+	</tr>
+	<tr>
+		<td><b>classifiedObject</b></td>
+		<td>This is the payload id of the payload 
+		being described (i.e. the same as the manifest payload id)</td>
+	</tr>
+	<tr>
+		<td><b>nodeRepresentation</b></td>
+		<td>This is the confidentiality code being 
+		described (see above).
+		
+		<p>For example, in CDA, this will be the confidentiality code from the 
+		clinical document </p>
+		<p>/ClinicalDocument/confidentialityCode/@code</p>
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Slot </b></td>
+		<td><b>Slot Name</b></td>
+		<td>This is fixed to &quot;codingScheme&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>This is the code for the coding scheme that produced the code in the 
+		nodeRepresentation</td>
+	</tr>
+	<tr>
+		<td rowspan="2"><b>Name </b></td>
+	</tr>
+		<tr>
+		<td><b>Value</b></td>
+		<td>This is the display name associated with 
+		the code being carried in the nodeRepresentation</td>
+	</tr>
+		</table>
+		
+<p><b>Example</b></p>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+id</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:a345a47f-c38d-457b-a474-0286d36fc028</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classificationScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">urn:uuid:f4f85eac-e6cb-4883-b524-f2705394840f</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+classifiedObject</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+nodeRepresentation</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">V</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">codingScheme</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">2.16.840.1.113883.1.11.16926</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:ValueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:LocalizedString</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">Very 
+Restricted</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;/&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Classification</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font>
+
+
+	</body><hr/>
+<h4>
+	L<b>egal Authenticator</b></h4>
+A participant who has legally authenticated, or attested to the content of 
+	the payload.
+<p>Optionality: <b>Optional [0..1]</b></p>
+<p>Metadata type: <b>Slot</b></p>
+
+<table class="table" id="table3">
+	<tr>
+		<td><b>Slot name</b></td>
+		<td>Fixed to &quot;legalAuthenticator&quot;</td>
+	</tr>
+	<tr>
+		<td><b>Value</b></td>
+		<td>The person details of the legal 
+		authenticator of the payload, using the HL7 v2.5 data type XCN.</td>
+	</tr>
+	</table>
+	
+<b>Example</b>
+<font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#ff0000"> 
+name</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">=&quot;</font><font FACE="Arial" SIZE="2">legalAuthenticator</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&quot;&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:valueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">102016309988^Jones^Peter^Andrew^^Dr^^^1.2.826.0.1285.0.2.0.109</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:value</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+</font><font FACE="Arial" SIZE="2">
+</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&nbsp;&nbsp;&nbsp; &lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:valueList</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;<br/>
+&lt;/</font><font FACE="Arial" SIZE="2" COLOR="#800000">rim:Slot</font><font FACE="Arial" SIZE="2" COLOR="#0000ff">&gt;</font><font FACE="Arial" SIZE="2">
+<br/>
+</font>
+<p>
+<hr/>
+					</div>
+				</div>
+			</div>
+			<div id="push"/></div><div id="footer"><div class="container"><div class="row"><div class="span6"><p class="text-left"><a href="mailto:interoperabilityteam@hscic.gov.uk">Contact Us</a></p></div><div class="span6"><p class="text-right"><b>Release Date: </b>15-Jul-2013</p></div></div></div></div><script src="../../Template/js/jquery/jquery-1.8.3.js"> </script><script src="../../Template/js/bootstrap/bootstrap.min.js"> </script><script src="../../Template/js/google-code-prettify/prettify.js"> </script><script>
+				!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+				</script></body></html>

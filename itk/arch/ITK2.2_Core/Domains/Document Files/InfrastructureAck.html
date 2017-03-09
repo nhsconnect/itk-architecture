@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:pack="urn:pack" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<head>
+<title>Core - Infrastructure Ack</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<link href="../../Template/css/bootstrap/bootstrap.min.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/base.css" rel="stylesheet" media="screen"/>
+<link href="../../Template/css/google-code-prettify/prettify.css" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div id="wrap">
+<div class="container">
+<div class="row">
+<div class="span4">
+<img src="../../Template/images/logo.png"/>
+</div>
+<div class="span8">
+<h4 class="pack-title text-right">Interoperability Toolkit<br/>Core</h4>
+</div>
+</div>
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+<span class="icon-bar"/>
+</button><div class="nav-collapse collapse">
+<p class="navbar-text pull-right"><b>Version: </b>2.0; <b>Status: </b>Draft</p>
+
+<!-- ##### MENU HERE #### -->
+
+<ul class="nav">
+<!-- ##### OVERVIEW #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Overview <b class="caret"> </b></a>
+	<ul class="dropdown-menu">
+		<li><a href="../../index.html">About</a></li>
+		<li><a href="../../Core/changehistory.html">Change History</a></li>
+		<li><a href="../../Core/UpgradeGuide.html">Upgrade Guide</a></li>
+	</ul></li>
+<!-- ##### CORE SERVICES #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./CoreServices.html">Overview</a></li>
+	</ul></li>
+<!-- ##### DISTRIBUTION ENVELOPE #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Distribution Envelope <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./DistributionEnvelopeOverview.html">Overview</a></li>
+		<li><a href="./DistributionEnvelopeSchema.html">Schema</a></li>
+		<li><a href="./DistributionEnvelopeAttributeDescription.html">Element & Attribute Descriptions</a></li>
+		<li><a href="./DistributionEnvelopeExamples.html">Envelope Examples</a></li>
+		<li><a href="./DistributionEnvelopeProfileId.html">ProfileId</a></li>
+	</ul></li>
+<!-- #### ACKNOWLEDGEMENT FRAMEWORK #### -->
+	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Acknowledgement Framework <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="./DistributionEnvelopeAckFramework.html">Overview</a></li>
+		<li><a href="./InfrastructureAck.html">Infrastructure Acknowledgement</a></li>
+		<li><a href="./BusinessAck.html">Business Acknowledgement</a></li>
+	</ul></li>	
+<!-- ##### METADATA #### -->
+	<li><a href="./metadata.html">Metadata</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="content" class="row">
+<div class="span12">
+<!-- ##### TEXT START#### -->
+<h3>Infrastructure Acknowledgement</h3>
+<div>
+<p>The purpose of the Infrastructure Acknowledgement is to inform the sender that the payload has been delivered to its final destination. </p>
+<p>An Infrastructure Acknowledgement is requested by the message sender setting a Distribution Envelope handling specification with key=<b>"urn:nhs-itk:ns:201005:infackrequested"</b> and value=<b>"true"</b></p>
+<h4>ITK Infrastructure Acknowledgement (urn:nhs-itk:interaction:ITKInfrastructureAcknowledgement-v1-0)</h4>
+<p>Communicates an ITK Infrastructure Acknowledgement to a recipient</p>
+<table class="table table-striped">
+<tr><th>Sender:</th><td width="60%">ITK Infrastructure Acknowledgement (Version 1.0)</td><td style="text-align: center; vertical-align:middle">
+<a href="../../schema/GenericInfrastructureResponse-v1-0.xsd" data-toggle="tooltip" title="View schema for message" target="_xml"><span class="label label-info implementation-label">View</span></a></td></tr>
+<tr><th>Receiver:</th><td><i>no defined responsibilities</i></td><td style="text-align: center; vertical-align:middle"><span class="label  implementation-label">View</span></td></tr>
+<tr><th>Message:</th><td>Wire Format</td><td style="text-align: center; vertical-align:middle"><a href="../../schema/GenericInfrastructureResponse-v1-0.xsd" data-toggle="tooltip" title="View schema for message" target="_xml"><span class="label label-info implementation-label">View</span></a></td></tr>
+<tr><th>Transmission Wrapper</th><td>ITK Distribution Envelope</td><td style="text-align: center; vertical-align:middle"><a href="../../schema/distributionEnvelope-v2-0.xsd" data-toggle="tooltip" title="View schema for message" target="_xml"><span class="label label-info implementation-label">View</span></a></td></tr>
+<tr><th>Web Service Wrapper</th><td>Send Infrastructure Acknowledgement (Input) (SendInfrastructureAck-v1-0)</td><td style="text-align: center; vertical-align:middle"><a href="../../schema/Core%20Release%202.0%20wsdls/CoreServices-v1-0.wsdl" data-toggle="tooltip" title="View schema for message" target="_xml"><span class="label label-info implementation-label">View</span></a></td></tr>
+</table>
+				
+<p>&nbsp;</p>
+<h4>Schema</h4>
+<table class="table table-striped">
+<thead>
+	<tr><th width="80%">Item</th><th/></tr>
+</thead>
+<tbody>
+	<tr><td>ITK Infrastructure Acknowledgement (Version 1.0)</td>
+	<td style="text-align: center; vertical-align:middle"><a href="../../schema/GenericInfrastructureResponse-v1-0.xsd" data-toggle="tooltip" title="View schema for message" target="_xml"><span class="label label-info implementation-label">View</span></a></td>
+	</tr>
+</tbody>
+</table>
+
+<p>&nbsp;</p>
+<h4>Elements and Attributes of the Infrastructure Acknowledgement</h4>
+<table class="table table-striped">
+<thead>
+	<tr>
+		<th width="20%">Name</th>
+		<th width="10%">Cardinality</th>
+		<th width="10%">Data Type</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><b>InfrastructureResponse</b></td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td>Root element for the response.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @result</td>
+		<td>1..1</td>
+		<td>Code</td>
+		<td>The actual response code.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @timestamp</td>
+		<td>0..1</td>
+		<td>dateTime</td>
+		<td>The time at which the error was generated.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @trackingIdRef</td>
+		<td>1..1</td>
+		<td>UUID</td>
+		<td>The tracking id taken from the distribution envelope of 
+		the message being acknowledged.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp; @serviceRef</td>
+		<td>1..1</td>
+		<td>URI</td>
+		<td>A reference to the original service used to send the 
+		message.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;<b>reportingIdentity</b></td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td>An reference to the reporter. Examples could include an ITK format address, a spine smart-card authentication etc.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>id</b></td>
+		<td>1..4</td>
+		<td>&nbsp;</td>
+		<td>Up to 4 levels of identity are allowed to identify the 
+		reporter. For example the 1st identity could be a person, 2nd their role, and 3rd the responsible organisation.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type</td>
+		<td>0..1</td>
+		<td>String</td>
+		<td>The format of identity used. (default= "2.16.840.1.113883.2.1.3.2.4.18.27", which indicates an ITK identity format). Other 
+		identity formats are supported, but these are generally used by local agreement. For sending an inter-organisational transmission, the default ITK identity format should be used.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @uri</td>
+		<td>1..1</td>
+		<td>URI</td>
+		<td>The actual reporter identification.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;<b>errors</b></td>
+		<td>1..1</td>
+		<td>&nbsp;</td>
+		<td>The list of errors which occurred. </td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>errorInfo</b></td>
+		<td>0..*</td>
+		<td>&nbsp;</td>
+		<td>Individual error items.</td>
+	</tr>
+	<tr>
+		<td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i>ErrorID</td>
+		<td>1..1</td>
+		<td>URI</td>
+		<td>An identifier for the error.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ErrorCode</td>
+		<td>1..1</td>
+		<td>String</td>
+		<td>A code indicating the type of error.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@codeSystem</td>
+		<td>0..1</td>
+		<td>String</td>
+		<td>The code system from which the code is drawn (default="2.16.840.1.113883.2.1.3.2.4.17.268").</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ErrorText</td>
+		<td>1..1</td>
+		<td>String</td>
+		<td>Display text associated with the error code.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		ErrorDiagnosticText</td>
+		<td>0..1</td>
+		<td>String</td>
+		<td>A free text field used to clarify the error.</td>
+	</tr>
+	</tbody>
+</table>
+
+
+
+</div>
+<!-- ##### TEXT END #### -->
+</div>
+</div>
+</div>
+<div id="push"/>
+</div>
+<div id="footer">
+<div class="container">
+<div class="row">
+<div class="span6">
+<p class="text-left"><a href="mailto:interoperabilityteam@hscic.gov.uk">Contact Us</a></p>
+</div>
+<div class="span6"><p class="text-right"><b>Release Date: </b>06-May-2014</p>
+</div>
+</div>
+</div>
+</div>
+<script src="../../Template/js/jquery/jquery-1.8.3.js"> </script><script src="../../Template/js/bootstrap/bootstrap.min.js"> </script>
+<script src="../../Template/js/google-code-prettify/prettify.js"> </script>
+<script>
+!function ($){$(function(){window.prettyPrint && prettyPrint()})}(window.jQuery)
+</script>
+</body></html>

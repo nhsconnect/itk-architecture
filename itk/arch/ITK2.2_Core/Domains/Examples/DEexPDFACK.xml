@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itk:DistributionEnvelope xsi:schemaLocation="urn:nhs-itk:ns:201005 ..\..\schema\distributionEnvelope-v2-0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:itk="urn:nhs-itk:ns:201005">
+	<itk:header service="urn:nhs-itk:services:201005:sendDistEnvelope" trackingid="7D6D9D40-AE1A-11DB-97F8-B18E1E0666AA">
+		<itk:addresslist>
+			<itk:address uri="urn:nhs-uk:addressing:ods:Y88764:G1234567"/>
+		</itk:addresslist>
+		<itk:auditIdentity>
+			<itk:id uri="urn:nhs-uk:identity:ods:R59:oncology"/>
+		</itk:auditIdentity>
+		<itk:manifest count="1">
+			<itk:manifestitem mimetype="application/pdf" base64="true"  id="uuid_7D73B7C0-AE1A-11DB-982C-B18E1E8888BB"/>
+		</itk:manifest>
+		<itk:senderAddress uri="urn:nhs-uk:addressing:ods:R59:oncology"/>
+		<itk:handlingSpecification>
+			<itk:spec value="true" key="urn:nhs-itk:ns:201005:infackrequested"/>
+			<itk:spec value="true" key="urn:nhs-itk:ns:201005:ackrequested"/>
+			<itk:spec value="false" key="urn:nhs-itk:ns:201005:busresponserequested"/>
+		</itk:handlingSpecification>
+	</itk:header>
+	<itk:payloads count="1">
+		<itk:payload id="uuid_7D73B7C0-AE1A-11DB-982C-B18E1E8888BB">
+                … a .pdf document goes in here …
+      </itk:payload>
+	</itk:payloads>
+</itk:DistributionEnvelope>

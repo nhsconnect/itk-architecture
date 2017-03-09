@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This example message is provided for illustrative purposes only. It has had no clinical validation. Whilst every effort has been taken to ensure that the examples are consistent with the message specification contained within the Domain Message Specification, where there are conflicts with the written message specification or schema, the specification or schema shall be considered to take precedence-->
+<itk:DistributionEnvelope xmlns:itk="urn:nhs-itk:ns:201005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<itk:header service="SendCDADocument-v2-0" trackingid="7D6F23E0-AE1E-11DB-8707-B18E1E0994EF">
+	<itk:addresslist>
+		<itk:address uri="urn:nhs-uk:addressing:ods:V396A"></itk:address>
+	</itk:addresslist>
+	<itk:auditIdentity>
+		<itk:id uri="urn:nhs-uk:identity:ods:5L399"></itk:id>
+	</itk:auditIdentity>
+		<itk:manifest count="2">
+			<itk:manifestitem mimetype="text/xml" id="uuid_A709A442-3CF4-476E-8377-AABBCCDDEEFF" metadata="true"/>
+			<itk:manifestitem mimetype="text/xml" id="uuid_A709A442-3CF4-476E-8377-376500E829C9" profileid="urn:nhs-en:profile:OutOfHoursReport-v1-0"/>
+		</itk:manifest>
+		<itk:senderAddress uri="urn:nhs-uk:addressing:ods:5L399:100"/>
+		<itk:handlingSpecification>
+		<itk:spec value="true" key="urn:nhs-itk:ns:201005:ackrequested"/>
+		<itk:spec value="urn:nhs-itk:interaction:primaryRecipientOutOfHoursReport-v1-0" key="urn:nhs-itk:ns:201005:interaction"></itk:spec>
+		</itk:handlingSpecification>
+	</itk:header>
+	<itk:payloads count="2">
+		<itk:payload id="uuid_A709A442-3CF4-476E-8377-AABBCCDDEEFF">
+			<itk:metadataPayload xmlns:itk="urn:nhs-itk:ns:201005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+				<rim:ExtrinsicObject xmlns:n1="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" id="uuid_A709A442-3CF4-476E-8377-376500E829C9" mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1">
+					<rim:Slot name="creationTime">
+						<rim:ValueList>
+							<rim:Value>200708012015+01</rim:Value>
+						</rim:ValueList>
+					</rim:Slot>
+					<rim:Slot name="sourcePatientId">
+						<rim:ValueList>
+							<rim:Value>993254128^^^2.16.840.1.113883.2.1.3.2.4.18.23</rim:Value>
+						</rim:ValueList>
+					</rim:Slot>
+					<rim:Slot name="sourcePatientInfo">
+						<rim:ValueList>
+							<rim:Value>PID-5|Taylor^Mark^^^Mr</rim:Value>
+							<rim:Value>PID-7|19410101</rim:Value>
+							<rim:Value>PID-8|Male</rim:Value>
+							<rim:Value>PID-11|21, County Lodge^Woodtown^Medway^^^ME5 FS1^^H</rim:Value>
+							<rim:Value>PID-13|tel:01634445667</rim:Value>
+						</rim:ValueList>
+					</rim:Slot>
+					<rim:Name>
+						<rim:LocalizedString value="Urgent Care Summary Report"/>
+					</rim:Name>
+					<rim:Classification id="urn:uuid:a4613c9a-72fb-4f0a-b7a7-9f99934462a6" classificationScheme="urn:uuid:93606bcf-9494-43ec-9b4e-a7748d1a838d" classifiedObject="uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD" nodeRepresentation="">
+						<rim:Slot name="authorPerson">
+							<rim:ValueList>
+								<rim:Value>100^Major^Florence^^^^^^2.16.840.1.113883.2.1.3.2.4.18.24</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Slot name="authorInstitution">
+							<rim:ValueList>
+								<rim:Value>Medway South Out of Hours Centre^^5L399</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Slot name="authorSpecialty">
+							<rim:ValueList>
+								<rim:Value>Nurse Practitioner</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+					</rim:Classification>
+					<rim:Classification id="urn:uuid:684ac2db-8ee5-4d40-9c49-362d7181bd10" classificationScheme="urn:uuid:f0306f51-975f-434e-a61c-c59651d33983" classifiedObject="uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD" nodeRepresentation="312341000000104">
+						<rim:Slot name="codingScheme">
+							<rim:ValueList>
+								<rim:Value>2.16.840.1.113883.2.1.3.2.4.15</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Name>
+							<rim:LocalizedString value="Urgent Care Summary Report"/>
+						</rim:Name>
+					</rim:Classification>
+					<rim:Classification id="urn:uuid:f8f832d5-7243-461c-b32c-6501e6ac17a3" classificationScheme="urn:uuid:a09d5840-386c-46f2-b5ad-9c3699a4309d" classifiedObject="uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD" nodeRepresentation="POCD_MT020001UK01">
+						<rim:Slot name="codingScheme">
+							<rim:ValueList>
+								<rim:Value>2.16.840.1.113883.2.1.3.2.4.18.17</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Name>
+							<rim:LocalizedString value="POCD_MT020001UK01"/>
+						</rim:Name>
+					</rim:Classification>
+					<rim:Classification id="urn:uuid:0e58528b-3d10-42a3-bf27-3c53d338efe8" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD" nodeRepresentation="313161000000107">
+						<rim:Slot name="codingScheme">
+							<rim:ValueList>
+								<rim:Value>2.16.840.1.113883.2.1.3.2.4.15</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Name>
+							<rim:LocalizedString value="Out of Hours Services Care Setting"/>
+						</rim:Name>
+					</rim:Classification>
+					<rim:Classification id="urn:uuid:0e58528b-3d10-42a3-bf27-3c53d338efe8" classificationScheme="urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1" classifiedObject="uuid_7D6A9000-AE1A-11DB-97EF-B18E1E0994CD" nodeRepresentation="V">
+						<rim:Slot name="codingScheme">
+							<rim:ValueList>
+								<rim:Value>2.16.840.1.113883.5.25</rim:Value>
+							</rim:ValueList>
+						</rim:Slot>
+						<rim:Name>
+							<rim:LocalizedString value="very restricted"/>
+						</rim:Name>
+					</rim:Classification>
+				</rim:ExtrinsicObject>
+			</itk:metadataPayload>
+		</itk:payload>
+		<itk:payload id="uuid_A709A442-3CF4-476E-8377-376500E829C9">
+			<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:npfitlc="NPFIT:HL7:Localisation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" classCode="DOCCLIN" moodCode="EVN">
+				<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+				<npfitlc:messageType root="2.16.840.1.113883.2.1.3.2.4.18.17" extension="POCD_MT020001UK01"/>
+				<id root="A709A442-3CF4-476E-8377-376500E829C9"/>
+				<code code="312341000000104" codeSystem="2.16.840.1.113883.2.1.3.2.4.15"/>
+				<title>Urgent Care Summary Report</title>
+				<effectiveTime value="200708012015+01"/>
+				<confidentialityCode code="V" displayName="very restricted" codeSystem="2.16.840.1.113883.5.25"/>
+				<setId root="411910CF-1A76-4330-98FE-C345DDEE5553"/>
+				<versionNumber value="1"/>
+				<recordTarget typeCode="RCT" contextControlCode="OP">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145201GB01#PatientRole"/>
+					<patientRole classCode="PAT">
+						<templateId extension="COCD_TP145201GB01#PatientRole" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+						<id extension="993254128" root="2.16.840.1.113883.2.1.3.2.4.18.23"/>
+						<addr use="H">
+							<streetAddressLine>21, County Lodge</streetAddressLine>
+							<streetAddressLine>Woodtown</streetAddressLine>
+							<city>Medway</city>
+							<postalCode>ME5 FS1</postalCode>
+						</addr>
+						<addr use="PHYS">
+							<streetAddressLine>The Woodtown Retirement Home</streetAddressLine>
+							<streetAddressLine>23, Seawood Road</streetAddressLine>
+							<streetAddressLine>Medway</streetAddressLine>
+							<city>Kent</city>
+							<postalCode>ME5 FS5</postalCode>
+						</addr>
+						<telecom value="tel:01634445667" use="H"/>
+						<telecom value="tel:01634631628" use="HV"/>
+						<telecom value="mailto:mark.taylor@emailfree.co.uk" use="H"/>
+						<patient classCode="PSN" determinerCode="INSTANCE">
+							<templateId extension="COCD_TP145201GB01#patientPatient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<name>
+								<prefix>Mr</prefix>
+								<family>Taylor</family>
+								<given>Mark</given>
+							</name>
+							<administrativeGenderCode codeSystem="2.16.840.1.113883.2.1.3.2.4.16.25" displayName="Male" code="1"/>
+							<birthTime value="19410101"/>
+							<languageCommunication>
+								<templateId extension="COCD_TP145201GB01#languageCommunication" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+								<languageCode  code="en"/>
+							</languageCommunication>
+						</patient>
+						<providerOrganization classCode="ORG" determinerCode="INSTANCE">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145201GB01#providerOrganization"/>
+							<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="V396F"/>
+							<name>Medway Medical Practice</name>
+							<telecom value="tel:01634111222" use="WP"/>
+							<addr use="WP">
+								<streetAddressLine>Springer Street</streetAddressLine>
+								<city>Medway</city>
+								<postalCode>ME5 5TY</postalCode>
+							</addr>
+							<standardIndustryClassCode code="001" displayName="GP Practice" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.289"/>
+						</providerOrganization>
+					</patientRole>
+				</recordTarget>
+				<author typeCode="AUT" contextControlCode="OP">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor"/>
+					<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+					<time value="200708012055+01"/>
+					<assignedAuthor classCode="ASSIGNED">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+						<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="100" assigningAuthorityName="5L399:Medway South Out of Hours Centre"/>
+						<code code="OOH02" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Practitioner"/>
+						<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+							<name>
+								<given>Florence</given>
+								<family>Major</family>
+							</name>
+						</assignedPerson>
+						<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+							<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L399"/>
+							<name>Medway South Out of Hours Centre</name>
+						</representedOrganization>
+					</assignedAuthor>
+				</author>
+				<custodian typeCode="CST">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145018UK03#AssignedCustodian"/>
+					<assignedCustodian classCode="ASSIGNED">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#AssignedCustodian"/>
+						<representedCustodianOrganization classCode="ORG" determinerCode="INSTANCE">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145018UK03#representedCustodianOrganization"/>
+							<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L3"/>
+							<name>Medway PCT</name>
+						</representedCustodianOrganization>
+					</assignedCustodian>
+				</custodian>
+				<informationRecipient typeCode="PRCP">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145202GB01#IntendedRecipient"/>
+					<intendedRecipient classCode="ASSIGNED">
+						<templateId extension="COCD_TP145202GB01#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+						<npfitlc:recipientRoleCode codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" code="NR0600" displayName="Specialist Nurse Practitioner"/>
+						<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="1234512345" assigningAuthorityName="V396A:Medway PCT"/>
+						<telecom value="mailto:pete.hungerford@nhs.net"/>
+						<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+							<templateId extension="COCD_TP145202GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<name>
+								<prefix>Mr</prefix>
+								<family>Hungerford</family>
+								<given>Pete</given>
+							</name>
+						</informationRecipient>
+						<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+							<templateId extension="COCD_TP145202GB01#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<id extension="V396A" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+							<name>Medway PCT</name>
+						</receivedOrganization>
+					</intendedRecipient>
+				</informationRecipient>
+				<informationRecipient typeCode="TRC">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145202GB01#IntendedRecipient"/>
+					<intendedRecipient classCode="ASSIGNED">
+						<templateId extension="COCD_TP145202GB01#IntendedRecipient" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+						<npfitlc:recipientRoleCode code="NR0260" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.124" displayName="General Medical Practitioner"/>
+						<id nullFlavor="NI"/>
+						<informationRecipient classCode="PSN" determinerCode="INSTANCE">
+							<templateId extension="COCD_TP145202GB01#assignedPerson" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<name>
+								<given>Frank</given>
+								<family>Wilson</family>
+							</name>
+						</informationRecipient>
+						<receivedOrganization classCode="ORG" determinerCode="INSTANCE">
+							<templateId extension="COCD_TP145202GB01#representedOrganization" root="2.16.840.1.113883.2.1.3.2.4.18.2"/>
+							<id extension="W123" root="2.16.840.1.113883.2.1.3.2.4.19.1"/>
+							<name>Medway Medical Practice</name>
+						</receivedOrganization>
+					</intendedRecipient>
+				</informationRecipient>
+				<componentOf typeCode="COMP">
+					<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146060UK01#EncompassingEncounter"/>
+					<encompassingEncounter classCode="ENC" moodCode="EVN">
+						<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#EncompassingEncounter"/>
+						<id root="3D3B95B5-24AA-42ED-9F77-BE7ECEB78C3E"/>
+						<code code="11429006" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Consultation"/>
+						<effectiveTime>
+							<low value="200708011845+01"/>
+							<high value="200708012015+01"/>
+						</effectiveTime>
+						<dischargeDispositionCode nullFlavor="NA"/>
+						<responsibleParty typeCode="RESP">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#responsibleParty"/>
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145210GB01#AssignedEntity"/>
+							<assignedEntity classCode="ASSIGNED">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#AssignedEntity"/>
+								<id nullFlavor="NI"/>
+								<code code="R0010" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Medical Director"/>
+								<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#assignedPerson"/>
+									<name>
+										<given>James</given>
+										<family>Williamson</family>
+									</name>
+								</assignedPerson>
+								<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+									<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145210GB01#representedOrganization"/>
+									<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="VDE232323"/>
+									<name>Medway South Out of Hours Centre</name>
+								</representedOrganization>
+							</assignedEntity>
+						</responsibleParty>
+						<location typeCode="LOC">
+							<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146060UK01#location"/>
+							<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145211GB01#HealthCareFacility"/>
+							<healthCareFacility classCode="SDLOC">
+								<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145211GB01#HealthCareFacility"/>
+								<code code="313161000000107" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Out of Hours Services Care Setting"/>
+							</healthCareFacility>
+						</location>
+					</encompassingEncounter>
+				</componentOf>
+				<component typeCode="COMP" contextConductionInd="true">
+					<structuredBody classCode="DOCBODY" moodCode="EVN">
+						<component typeCode="COMP" contextConductionInd="true">
+							<section classCode="DOCSECT" moodCode="EVN">
+								<id root="7AFDCAD6-1CE3-45A6-A176-DDAC27F46C87"/>
+								<entry typeCode="COMP" contextConductionInd="true">
+									<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146024UK04#AdministrativeProcedure"/>
+									<act classCode="ACT" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146024UK04#AdministrativeProcedure"/>
+										<id root="B226C999-5119-4C51-9A91-96365779DEB3"/>
+										<code code="183631005" codeSystem="2.16.840.1.113883.2.1.3.2.4.15" displayName="Planned telephone contact">
+											<originalText>
+												<reference value="#b1"/>
+											</originalText>
+											<qualifier>
+												<name code="263490005" displayName="Status"/>
+												<value code="385657008" displayName="Abandoned"/>
+											</qualifier>
+										</code>
+										<statusCode code="completed"/>
+										<effectiveTime>
+											<low value="200708011910+01"/>
+											<high value="200708012010+01"/>
+										</effectiveTime>
+									</act>
+								</entry>
+								<component typeCode="COMP" contextConductionInd="true">
+									<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1"/>
+									<section classCode="DOCSECT" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1"/>
+										<id root="E27F4264-C005-4BC3-BFA1-57C3E64B30B7"/>
+										<title>Presenting Information</title>
+										<text>
+											<paragraph>Call Handler: Mary Flemming, Health Advisor</paragraph>The patient has been seen by a consultant that day and given new medication but on reading the patient information leaflet he discovers that a condition he has should have been mentioned to the doctor. He has already taken one of the tablets and since taking it is feeling unwell.
+										</text>
+										<author typeCode="AUT" contextControlCode="OP">
+											<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#author"/>
+											<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP145200GB01#AssignedAuthor"/>
+											<functionCode code="OA" displayName="Originating Author" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.178"/>
+											<time value="200708012055+01"/>
+											<assignedAuthor classCode="ASSIGNED">
+												<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#AssignedAuthor"/>
+												<id root="2.16.840.1.113883.2.1.3.2.4.18.24" extension="101" assigningAuthorityName="5L399:Medway South Out of Hours Centre"/>
+												<code code="OOH02" codeSystem="2.16.840.1.113883.2.1.3.2.4.17.196" displayName="Nurse Practitioner"/>
+												<assignedPerson classCode="PSN" determinerCode="INSTANCE">
+													<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#assignedPerson"/>
+													<name>
+														<given>Mary</given>
+														<family>Flemming</family>
+													</name>
+												</assignedPerson>
+												<representedOrganization classCode="ORG" determinerCode="INSTANCE">
+													<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP145200GB01#representedOrganization"/>
+													<id root="2.16.840.1.113883.2.1.3.2.4.19.1" extension="5L399"/>
+													<name>Medway South Out of Hours Centre</name>
+												</representedOrganization>
+											</assignedAuthor>
+										</author>
+									</section>
+								</component>
+								<component typeCode="COMP" contextConductionInd="true">
+									<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1"/>
+									<section classCode="DOCSECT" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1"/>
+										<id root="773110DB-288F-4B32-8DE1-362646A65E9A"/>
+										<title>Contact Attempt</title>
+										<text>
+											<content ID="b1">Planned telephone contact abandoned as patient cannot be reached. Tried from 19:10 to 20:10.</content>
+										</text>
+									</section>
+								</component>
+								<component typeCode="COMP" contextConductionInd="true">
+									<npfitlc:contentId root="2.16.840.1.113883.2.1.3.2.4.18.16" extension="COCD_TP146061UK01#Section1"/>
+									<section classCode="DOCSECT" moodCode="EVN">
+										<templateId root="2.16.840.1.113883.2.1.3.2.4.18.2" extension="COCD_TP146061UK01#Section1"/>
+										<id root="8271D2F1-123F-4A14-A1AC-C6C8023203CF"/>
+										<title>Final Outcome</title>
+										<text>Discussed with Dr Jones. Unable to contact patient. Call closed 20:55.</text>
+									</section>
+								</component>
+							</section>
+						</component>
+					</structuredBody>
+				</component>
+			</ClinicalDocument>
+		</itk:payload>
+	</itk:payloads>
+</itk:DistributionEnvelope>
